@@ -1,0 +1,28 @@
+.house{
+    margin: 0px auto;
+    text-align: center;
+    height: 100%;
+    max-width: 800px;
+    overflow-x: none;
+    position: relative;
+    animation: houseHoverEffect 8s infinite ease;
+
+    img{
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.invisible{
+    opacity: 0;
+}
+
+#house-wrapper{
+    position: absolute;
+    top: 0;
+}
+
+.st0{
+    fill-rule:evenodd;clip-rule:evenodd;fill:#FDEBDD;
+}

@@ -1,0 +1,51 @@
+@keyframes houseHoverEffect{
+    0%{
+        transform: translate(0px, 12px);
+    }
+
+    50%{
+        transform: translate(0px, -12px);
+    }
+
+    100%{
+        transform: translate(0px, 12px);
+    }
+}
+
+@keyframes cloudMovement{
+    0%{
+        transform: translate(10px, 0px);
+    }
+    50%{
+        transform: translate(-10px, 0px);
+    }
+    100%{
+        transform: translate(10px, 0px);
+    }
+}
+
+@keyframes cloudReverse{
+    0%{
+        transform: translate(-10px, 0px);
+    }
+    50%{
+        transform: translate(10px, 0px);
+    }
+    100%{
+        transform: translate(-10px, 0px);
+    }
+}
+
+@keyframes peopleWiggle{
+    0%{
+        transform: translate(0, 0px)
+    }
+
+    50%{
+        transform: translate(0, -10px)
+    }
+
+    100%{
+        transform: translate(0, 0px)
+    }
+}

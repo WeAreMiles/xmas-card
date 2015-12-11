@@ -1,0 +1,24 @@
+/*
+Theme Name: THEMENAME
+Author: Miles
+Author URI: AUTHOR URI
+Version: 1.0
+
+*/
+@import 'partials/sanitize';
+@import 'partials/colours';
+@import 'partials/fonts';
+@import 'partials/type';
+@import 'partials/reusables';
+@import 'partials/helpers';
+@import 'partials/individual_pages';
+@import 'partials/animations';
+
+@import 'components/container';
+@import 'components/module';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/contact';
+@import 'components/house';
+@import 'components/clouds';
+@import 'components/people';

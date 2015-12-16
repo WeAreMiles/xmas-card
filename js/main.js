@@ -302,7 +302,7 @@ var goHouse = function(){
 }
 
 var goClouds = function() {
-    anim('clouds', {marginLeft: {to: '-12px', fr:'12px'}}, 6, 'ease').anim('house', {marginLeft: {to:'12px', fr:'-12px'}}, 6, 'ease').anim(goClouds);
+    anim('clouds', {marginLeft: {to: '-12px', fr:'12px'}}, 6, 'ease').anim('clouds', {marginLeft: {to:'12px', fr:'-12px'}}, 6, 'ease').anim(goClouds);
 }
 
 var goSanta = function() {
@@ -317,6 +317,10 @@ if(!(Modernizr.cssanimations && Modernizr.canvas))
     goHouse();
     goClouds();
     goSanta();
+
+    for(var i = 0; i < tracks.length; i++){
+        tracks[i].muted = true;
+    }
 }
 
 for(var iterator = 0; iterator < people.length; iterator++){

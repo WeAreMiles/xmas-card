@@ -1,0 +1,58 @@
+
+.cloud{
+    display: inline-block;
+    float: left;
+    width: 150px;
+    position: absolute;
+    animation: cloudMovement 8s infinite ease;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.cloud--behind{
+    z-index: 0;
+}
+
+.cloud--reverse{
+    animation: cloudReverse 8s infinite ease;
+}
+
+#cloud-1{
+    top: 0;
+    left: percentage(775/1132);
+    width: percentage(80/800);
+}
+
+#cloud-2{
+    top: percentage(17/1132);
+    left: percentage(406/1132);
+    width: percentage(232/1132);
+}
+
+#cloud-3{
+    top: percentage(179/1132);
+    left: percentage(257/1132);
+    width: percentage(102/800);
+}
+
+#cloud-4{
+    top: percentage(364/1132);
+    left: percentage(304/1132);
+    width: percentage(145/1132);
+}
+
+#cloud-5{
+    top: percentage(441/1132);
+}
+
+#cloud-6{
+    left: percentage(886/1132);
+    top: percentage(284/1132);
+    width: percentage(152/1132);
+}
+
+#cloud-7{
+    left: percentage(985/1132);
+    top: percentage(400/1132);
+    width: percentage(200/1132);
+}

@@ -1,0 +1,20 @@
+.santa-holder{
+    height: 50px;
+    z-index: 0;
+    width: 100%;
+    animation: santaSleigh 10.8s infinite linear;
+}
+
+.santa-wrapper{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 50px;
+    top: 50%;
+    margin-top: -50px;
+}
+
+.santa{
+    height: 50px;
+    margin-left: -214px;
+}

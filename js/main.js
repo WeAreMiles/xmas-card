@@ -282,6 +282,21 @@ return A
 //
 // });
 
+var personClicked;
+var numberIWant;
+var trackId;
+var songTrack;
+
+var masterTrack = document.getElementById('masterTrack');
+
+var people = document.getElementsByClassName('person');
+
+var tracks = document.getElementsByClassName('track');
+
+var startButton = document.getElementById('start');
+
+var splashScreen = document.getElementById('splashScreen');
+
 var goHouse = function(){
     anim('house', {marginTop: {to:'-12px', fr:'12px'}}, 3, 'ease').anim('house', {marginTop: {to:'12px', fr:'-12px'}}, 3, 'ease').anim(goHouse);
 }
@@ -290,34 +305,36 @@ var goClouds = function() {
     anim('clouds', {marginLeft: {to: '-12px', fr:'12px'}}, 6, 'ease').anim('house', {marginLeft: {to:'12px', fr:'-12px'}}, 6, 'ease').anim(goClouds);
 }
 
+var goSanta = function() {
+    anim('santa', {marginLeft: {to: '130%', fr:'0%'}}, 10.8, 'lin').anim(goSanta);
+}
+
+var numberPattern = /\d+/g;
+
 //IF NO CSS Animations or Canvas
 if(!(Modernizr.cssanimations && Modernizr.canvas))
 {
     goHouse();
     goClouds();
+    goSanta();
 }
-
-var masterTrack = document.getElementById('masterTrack');
-
-var people = document.getElementsByClassName('person');
-
-var tracks = document.getElementsByClassName('track');
 
 for(var iterator = 0; iterator < people.length; iterator++){
 
     people[iterator].addEventListener('mousedown', function(e){
-
-        var personClicked = this.id;
-
-        var trackId = "sound-" + personClicked.slice(-1);
-
-        var songTrack = document.getElementById(trackId);
-
+        personClicked = this.id;
+        numberIWant = personClicked.match(numberPattern);
+        trackId = "sound-" + numberIWant;
+        songTrack = document.getElementById(trackId);
         songTrack.muted = !songTrack.muted;
-
         this.classList.toggle('person--animated');
     });
 }
+
+startButton.addEventListener('click', function(){
+    splashScreen.style.display = "none";
+})
+
 
 
 

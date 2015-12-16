@@ -1,0 +1,42 @@
+.splash-screen{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: $c-splash;
+    opacity: 0.85;
+    z-index: 5;
+    text-align: center;
+}
+
+.splash-text-holder{
+    position: relative;
+    margin: 0px auto;
+    top: 30%;
+    width: 340px;
+}
+
+.splash-header{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+}
+
+.splash-text{
+    p{
+        margin: 0px auto;
+        margin-top: 20px;
+        color: white;
+        width: 340px;
+    }
+}
+
+.button{
+    margin: 0px auto;
+    display: inline-block;
+    width: 160px;
+    height: 41px;
+    background-image: url('../../images/start-button.png');
+    cursor: pointer;
+    margin-top: 25px;
+}

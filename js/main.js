@@ -282,6 +282,16 @@ return A
 //
 // });
 
+
+
+function loadAudio() {
+  var preload = new createjs.LoadQueue();
+  preload.addEventListener("fileload", handleFileComplete);
+  preload.loadFile("assets/preloadjs-bg-center.png");
+}
+
+
+
 var personClicked;
 var numberIWant;
 var trackId;

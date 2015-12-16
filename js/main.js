@@ -286,15 +286,18 @@ var goHouse = function(){
     anim('house', {marginTop: {to:'-12px', fr:'12px'}}, 3, 'ease').anim('house', {marginTop: {to:'12px', fr:'-12px'}}, 3, 'ease').anim(goHouse);
 }
 
+var goClouds = function() {
+    anim('clouds', {marginLeft: {to: '-12px', fr:'12px'}}, 6, 'ease').anim('house', {marginLeft: {to:'12px', fr:'-12px'}}, 6, 'ease').anim(goClouds);
+}
+
 //IF NO CSS Animations or Canvas
 if(!(Modernizr.cssanimations && Modernizr.canvas))
 {
     goHouse();
+    goClouds();
 }
 
 var masterTrack = document.getElementById('masterTrack');
-
-var stateOfPeople = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
 
 var people = document.getElementsByClassName('person');
 
@@ -302,106 +305,25 @@ var tracks = document.getElementsByClassName('track');
 
 for(var iterator = 0; iterator < people.length; iterator++){
 
-    people[iterator].addEventListener('click', function(){
-        var personClicked = this.id;
-        var trackId = "sound-" + personClicked.slice(-1);
+    people[iterator].addEventListener('mousedown', function(e){
 
-        console.log(trackId);
+        var personClicked = this.id;
+
+        var trackId = "sound-" + personClicked.slice(-1);
 
         var songTrack = document.getElementById(trackId);
 
         songTrack.muted = !songTrack.muted;
 
         this.classList.toggle('person--animated');
-
-        // switch(personClicked){
-        //     case "person-1":
-        //         stateOfPeople[0] = !stateOfPeople[0];
-        //         break;
-        //     case "person-2":
-        //         stateOfPeople[1] = !stateOfPeople[1];
-        //         break;
-        //     case "person-3":
-        //         stateOfPeople[2] = !stateOfPeople[2];
-        //         break;
-        //     case "person-4":
-        //         stateOfPeople[3] = !stateOfPeople[3];
-        //         break;
-        //     case "person-5":
-        //         stateOfPeople[4] = !stateOfPeople[4];
-        //         break;
-        //     case "person-6":
-        //         stateOfPeople[5] = !stateOfPeople[5];
-        //         break;
-        //     case "person-7":
-        //         stateOfPeople[6] = !stateOfPeople[6];
-        //         break;
-        //     case "person-8":
-        //         stateOfPeople[7] = !stateOfPeople[7];
-        //         break;
-        //     case "person-9":
-        //         stateOfPeople[8] = !stateOfPeople[8];
-        //         break;
-        //     case "person-10":
-        //         stateOfPeople[9] = !stateOfPeople[9];
-        //         break;
-        //     case "person-11":
-        //         stateOfPeople[10] = !stateOfPeople[10];
-        //         break;
-        //     case "person-12":
-        //         stateOfPeople[11] = !stateOfPeople[11];
-        //         break;
-        //     case "person-13":
-        //         stateOfPeople[12] = !stateOfPeople[12];
-        //         break;
-        //     case "person-14":
-        //         stateOfPeople[13] = !stateOfPeople[13];
-        //         break;
-        //     case "person-15":
-        //         stateOfPeople[14] = !stateOfPeople[14];
-        //         break;
-        //     case "person-16":
-        //         stateOfPeople[15] = !stateOfPeople[15];
-        //         break;
-        //     case "person-17":
-        //         stateOfPeople[16] = !stateOfPeople[17];
-        //         break;
-        //     case "person-18":
-        //         stateOfPeople[17] = !stateOfPeople[17];
-        //         break;
-        //     case "person-19":
-        //         stateOfPeople[18] = !stateOfPeople[18];
-        //         break;
-        //     case "person-20":
-        //         stateOfPeople[19] = !stateOfPeople[19];
-        //         break;
-        //     case "person-21":
-        //         stateOfPeople[20] = !stateOfPeople[20];
-        //         break;
-        //     case "person-22":
-        //         stateOfPeople[21] = !stateOfPeople[21];
-        //         break;
-        //     case "person-23":
-        //         stateOfPeople[22] = !stateOfPeople[22];
-        //         break;
-        // }
     });
 }
 
+
+
 var endOfTrack = function(){
-    // for(var iterator2 = 0; iterator2 < stateOfPeople.length; iterator2++){
-    //     console.log('Hello');
-    //     switch(stateOfPeople[iterator2]){
-    //         case true :
-    //             tracks[iterator2].play();
-    //             break;
-    //         case false :
-    //             tracks[iterator2].pause();
-    //             break;
-    //     }
-    // }
-
-
-
+    for(var iterator2 = 0; iterator2 < tracks.length; iterator2++){
+        tracks[iterator2].currentTime = 0;
+    }
     masterTrack.play();
 }

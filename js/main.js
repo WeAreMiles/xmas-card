@@ -333,6 +333,8 @@ for(var iterator = 0; iterator < people.length; iterator++){
 
 startButton.addEventListener('click', function(){
     splashScreen.style.display = "none";
+    people[0].classList.toggle('person--animated');
+    tracks[0].muted = !tracks[0].muted;
 })
 
 

@@ -36,7 +36,21 @@
     display: inline-block;
     width: 160px;
     height: 41px;
-    background-image: url('../../images/start-button.png');
     cursor: pointer;
     margin-top: 25px;
+}
+
+#start {
+    display: none;
+    background-image: url('../../images/start-button.png');
+}
+
+#fallback-splash {
+    background: $c-splash none repeat scroll 0% 0%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2147483647;
 }

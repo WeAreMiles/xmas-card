@@ -1,6 +1,6 @@
 /*! modernizr 3.2.0 (Custom Build) | MIT *
- * http://modernizr.com/download/?-canvas-cssanimations-setclasses !*/
-!function(e,n,t){function r(e,n){return typeof e===n}function o(){var e,n,t,o,s,i,a;for(var l in C)if(C.hasOwnProperty(l)){if(e=[],n=C[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(o=r(n.fn,"function")?n.fn():n.fn,s=0;s<e.length;s++)i=e[s],a=i.split("."),1===a.length?Modernizr[a[0]]=o:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=o),g.push((o?"":"no-")+a.join("-"))}}function s(e){var n=_.className,t=Modernizr._config.classPrefix||"";if(x&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),x?_.className.baseVal=n:_.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):x?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function a(e,n){return!!~(""+e).indexOf(n)}function l(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function f(e,n){return function(){return e.apply(n,arguments)}}function u(e,n,t){var o;for(var s in e)if(e[s]in n)return t===!1?e[s]:(o=n[e[s]],r(o,"function")?f(o,t||n):o);return!1}function d(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function c(){var e=n.body;return e||(e=i(x?"svg":"body"),e.fake=!0),e}function p(e,t,r,o){var s,a,l,f,u="modernizr",d=i("div"),p=c();if(parseInt(r,10))for(;r--;)l=i("div"),l.id=o?o[r]:u+(r+1),d.appendChild(l);return s=i("style"),s.type="text/css",s.id="s"+u,(p.fake?p:d).appendChild(s),p.appendChild(d),s.styleSheet?s.styleSheet.cssText=e:s.appendChild(n.createTextNode(e)),d.id=u,p.fake&&(p.style.background="",p.style.overflow="hidden",f=_.style.overflow,_.style.overflow="hidden",_.appendChild(p)),a=t(d,e),p.fake?(p.parentNode.removeChild(p),_.style.overflow=f,_.offsetHeight):d.parentNode.removeChild(d),!!a}function m(n,r){var o=n.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(d(n[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var s=[];o--;)s.push("("+d(n[o])+":"+r+")");return s=s.join(" or "),p("@supports ("+s+") { #modernizr { position: absolute; } }",function(e){return"absolute"==getComputedStyle(e,null).position})}return t}function v(e,n,o,s){function f(){d&&(delete P.style,delete P.modElem)}if(s=r(s,"undefined")?!1:s,!r(o,"undefined")){var u=m(e,o);if(!r(u,"undefined"))return u}for(var d,c,p,v,h,y=["modernizr","tspan"];!P.style;)d=!0,P.modElem=i(y.shift()),P.style=P.modElem.style;for(p=e.length,c=0;p>c;c++)if(v=e[c],h=P.style[v],a(v,"-")&&(v=l(v)),P.style[v]!==t){if(s||r(o,"undefined"))return f(),"pfx"==n?v:!0;try{P.style[v]=o}catch(g){}if(P.style[v]!=h)return f(),"pfx"==n?v:!0}return f(),!1}function h(e,n,t,o,s){var i=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+b.join(i+" ")+i).split(" ");return r(n,"string")||r(n,"undefined")?v(a,n,o,s):(a=(e+" "+E.join(i+" ")+i).split(" "),u(a,n,t))}function y(e,n,r){return h(e,t,t,n,r)}var g=[],C=[],w={_version:"3.2.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){C.push({name:e,fn:n,options:t})},addAsyncTest:function(e){C.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=w,Modernizr=new Modernizr;var _=n.documentElement,x="svg"===_.nodeName.toLowerCase();Modernizr.addTest("canvas",function(){var e=i("canvas");return!(!e.getContext||!e.getContext("2d"))});var S="Moz O ms Webkit",b=w._config.usePrefixes?S.split(" "):[];w._cssomPrefixes=b;var E=w._config.usePrefixes?S.toLowerCase().split(" "):[];w._domPrefixes=E;var N={elem:i("modernizr")};Modernizr._q.push(function(){delete N.elem});var P={style:N.elem.style};Modernizr._q.unshift(function(){delete P.style}),w.testAllProps=h,w.testAllProps=y,Modernizr.addTest("cssanimations",y("animationName","a",!0)),o(),s(g),delete w.addTest,delete w.addAsyncTest;for(var z=0;z<Modernizr._q.length;z++)Modernizr._q[z]();e.Modernizr=Modernizr}(window,document);
+ * http://modernizr.com/download/?-audio-canvas-cssanimations-setclasses !*/
+!function(e,n,t){function o(e,n){return typeof e===n}function r(){var e,n,t,r,a,s,i;for(var l in C)if(C.hasOwnProperty(l)){if(e=[],n=C[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(r=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)s=e[a],i=s.split("."),1===i.length?Modernizr[i[0]]=r:(!Modernizr[i[0]]||Modernizr[i[0]]instanceof Boolean||(Modernizr[i[0]]=new Boolean(Modernizr[i[0]])),Modernizr[i[0]][i[1]]=r),h.push((r?"":"no-")+i.join("-"))}}function a(e){var n=_.className,t=Modernizr._config.classPrefix||"";if(x&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),x?_.className.baseVal=n:_.className=n)}function s(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):x?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function i(e,n){return!!~(""+e).indexOf(n)}function l(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function u(e,n){return function(){return e.apply(n,arguments)}}function f(e,n,t){var r;for(var a in e)if(e[a]in n)return t===!1?e[a]:(r=n[e[a]],o(r,"function")?u(r,t||n):r);return!1}function c(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function d(){var e=n.body;return e||(e=s(x?"svg":"body"),e.fake=!0),e}function p(e,t,o,r){var a,i,l,u,f="modernizr",c=s("div"),p=d();if(parseInt(o,10))for(;o--;)l=s("div"),l.id=r?r[o]:f+(o+1),c.appendChild(l);return a=s("style"),a.type="text/css",a.id="s"+f,(p.fake?p:c).appendChild(a),p.appendChild(c),a.styleSheet?a.styleSheet.cssText=e:a.appendChild(n.createTextNode(e)),c.id=f,p.fake&&(p.style.background="",p.style.overflow="hidden",u=_.style.overflow,_.style.overflow="hidden",_.appendChild(p)),i=t(c,e),p.fake?(p.parentNode.removeChild(p),_.style.overflow=u,_.offsetHeight):c.parentNode.removeChild(c),!!i}function m(n,o){var r=n.length;if("CSS"in e&&"supports"in e.CSS){for(;r--;)if(e.CSS.supports(c(n[r]),o))return!0;return!1}if("CSSSupportsRule"in e){for(var a=[];r--;)a.push("("+c(n[r])+":"+o+")");return a=a.join(" or "),p("@supports ("+a+") { #modernizr { position: absolute; } }",function(e){return"absolute"==getComputedStyle(e,null).position})}return t}function y(e,n,r,a){function u(){c&&(delete E.style,delete E.modElem)}if(a=o(a,"undefined")?!1:a,!o(r,"undefined")){var f=m(e,r);if(!o(f,"undefined"))return f}for(var c,d,p,y,v,g=["modernizr","tspan"];!E.style;)c=!0,E.modElem=s(g.shift()),E.style=E.modElem.style;for(p=e.length,d=0;p>d;d++)if(y=e[d],v=E.style[y],i(y,"-")&&(y=l(y)),E.style[y]!==t){if(a||o(r,"undefined"))return u(),"pfx"==n?y:!0;try{E.style[y]=r}catch(h){}if(E.style[y]!=v)return u(),"pfx"==n?y:!0}return u(),!1}function v(e,n,t,r,a){var s=e.charAt(0).toUpperCase()+e.slice(1),i=(e+" "+T.join(s+" ")+s).split(" ");return o(n,"string")||o(n,"undefined")?y(i,n,r,a):(i=(e+" "+S.join(s+" ")+s).split(" "),f(i,n,t))}function g(e,n,o){return v(e,t,t,n,o)}var h=[],C=[],w={_version:"3.2.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){C.push({name:e,fn:n,options:t})},addAsyncTest:function(e){C.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=w,Modernizr=new Modernizr;var _=n.documentElement,x="svg"===_.nodeName.toLowerCase();Modernizr.addTest("audio",function(){var e=s("audio"),n=!1;try{(n=!!e.canPlayType)&&(n=new Boolean(n),n.ogg=e.canPlayType('audio/ogg; codecs="vorbis"').replace(/^no$/,""),n.mp3=e.canPlayType('audio/mpeg; codecs="mp3"').replace(/^no$/,""),n.opus=e.canPlayType('audio/ogg; codecs="opus"').replace(/^no$/,""),n.wav=e.canPlayType('audio/wav; codecs="1"').replace(/^no$/,""),n.m4a=(e.canPlayType("audio/x-m4a;")||e.canPlayType("audio/aac;")).replace(/^no$/,""))}catch(t){}return n}),Modernizr.addTest("canvas",function(){var e=s("canvas");return!(!e.getContext||!e.getContext("2d"))});var P="Moz O ms Webkit",T=w._config.usePrefixes?P.split(" "):[];w._cssomPrefixes=T;var S=w._config.usePrefixes?P.toLowerCase().split(" "):[];w._domPrefixes=S;var b={elem:s("modernizr")};Modernizr._q.push(function(){delete b.elem});var E={style:b.elem.style};Modernizr._q.unshift(function(){delete E.style}),w.testAllProps=v,w.testAllProps=g,Modernizr.addTest("cssanimations",g("animationName","a",!0)),r(),a(h),delete w.addTest,delete w.addAsyncTest;for(var N=0;N<Modernizr._q.length;N++)Modernizr._q[N]();e.Modernizr=Modernizr}(window,document);
 
 /** Copyright 2013 mocking@gmail.com * http://github.com/relay/anim
 
@@ -281,31 +281,100 @@ return A
 //   }
 //
 // });
+var audioPath = "sound/";
+var sounds = [
+    {id:"sound1", src:audioPath+"xmas2015_01-katie_hi.mp3"}, // katie
+    {id:"sound2", src:audioPath+"hohoho.mp3"}, // merass
+    {id:"sound14", src:audioPath+"xmas2015_15-paul_low.mp3"}, // paul
+    {id:"sound3", src:audioPath+"xmas2015_10-danny.mp3"}, // danny
+    {id:"sound4", src:audioPath+"xmas2015_06-chris.mp3"}, // chris
+    {id:"sound5", src:audioPath+"woof.mp3"}, // rufus
+    {id:"sound6", src:audioPath+"xmas2015_05-dave.mp3"}, //dave
+    {id:"sound7", src:audioPath+"ian.mp3"}, //ian, // me
+    {id:"sound22", src:audioPath+"xmas2015_11-matty_hi.mp3"}, // matty
+    {id:"sound23", src:audioPath+"xmas2015_12-dan.mp3"}, // dan
+    {id:"sound8", src:audioPath+"xmas2015_08-jonny_low.mp3"}, // jonny
+    {id:"sound9", src:audioPath+"xmas2015_07-jonny_hi.mp3"}, // miles
+    {id:"sound10", src:audioPath+"xmas2015_02-katie_low.mp3"}, // katie
+    {id:"sound11", src:audioPath+"hohoho.mp3"}, // ed
+    {id:"sound12", src:audioPath+"xmas2015_04-dan.mp3"}, //tristan
+    {id:"sound13", src:audioPath+"xmas2015_13-stig.mp3"},
+    {id:"sound15", src:audioPath+"xmas2015_14-paul_hi.mp3"}, //jon
+    {id:"sound16", src:audioPath+"merryxmas.mp3"}, // elliot
+    {id:"sound17", src:audioPath+"xmas2015_03-mel.mp3"}, //mel
+    {id:"sound18", src:audioPath+"tree.mp3"}, //tree
+    {id:"sound19", src:audioPath+"xmas2015_09-rachelsas.mp3"}, // rachel
+    {id:"sound20", src:audioPath+"merryxmas.mp3"}, // gabrielle
+    {id:"sound21", src:audioPath+"sas.mp3"}
+];
+var soundInstances = [];
 
+$(document).ready(initSounds);
 
-
-function loadAudio() {
-  var preload = new createjs.LoadQueue();
-  preload.addEventListener("fileload", handleFileComplete);
-  preload.loadFile("assets/preloadjs-bg-center.png");
+function initSounds() {
+    var queue = new createjs.LoadQueue();
+    // createjs.Sound.alternateExtensions = ["mp3"];
+    queue.installPlugin(createjs.Sound);
+    // queue.addEventListener("error",  fileerrorBOO );
+    queue.addEventListener("fileload",  fileloadBOO );
+    queue.addEventListener("complete", continueLoading);
+    queue.loadManifest(sounds);
 }
 
+// function fileerrorBOO(e) {
+//     console.log('fileerrorBOO');
+//     // console.log(e);
+// }
+//
+function fileloadBOO(e) {
+    // console.log('fileloadBOO');
+    // alert(e.item.src);
+}
 
+function continueLoading() {
+    setUpSounds();
+    assignListeners();
+    $('#loading').hide();
+    $('#start').show();
+}
 
-var personClicked;
-var numberIWant;
-var trackId;
-var songTrack;
+function setUpSounds() {
+    createjs.Sound.registerSounds(sounds);
+    for(i = 1; i <= 23; i++) {
+        var loop = -1;
+        if ($('#person-' + i).hasClass('person--once')) {
+            loop = 0;
+        }
+        var sound = createjs.Sound.play("sound" + i, 'none', 0, 0, loop);
+        sound.muted = true;
+        soundInstances.push(sound);
+    }
+}
 
-var masterTrack = document.getElementById('masterTrack');
+function assignListeners() {
+    $('#start').click(playCard);
+    $('.person').on('click touchstart',manageSinging);
+}
 
-var people = document.getElementsByClassName('person');
+function playCard(e) {
+    e.preventDefault();
+    soundInstances[0].muted = false;
+    $('#splashScreen').hide();
+    $('.person:eq(0)').toggleClass('person--animated');
+}
 
-var tracks = document.getElementsByClassName('track');
-
-var startButton = document.getElementById('start');
-
-var splashScreen = document.getElementById('splashScreen');
+function manageSinging(e) {
+    e.preventDefault();
+    var value = $(this).index();
+    soundInstances[value].muted = !soundInstances[value].muted;
+    if (!$(this).hasClass('person--once')) {
+        $(this).toggleClass('person--animated');
+    } else {
+        soundInstances[value].muted = false;
+        soundInstances[value].play();
+    }
+    console.log(value, soundInstances[value].muted);
+}
 
 var goHouse = function(){
     anim('house', {marginTop: {to:'-12px', fr:'12px'}}, 3, 'ease').anim('house', {marginTop: {to:'12px', fr:'-12px'}}, 3, 'ease').anim(goHouse);
@@ -319,44 +388,14 @@ var goSanta = function() {
     anim('santa', {marginLeft: {to: '130%', fr:'0%'}}, 10.8, 'lin').anim(goSanta);
 }
 
-var numberPattern = /\d+/g;
 
 //IF NO CSS Animations or Canvas
-if(!(Modernizr.cssanimations && Modernizr.canvas))
-{
+if(!Modernizr.cssanimations) {
     goHouse();
     goClouds();
     goSanta();
-
-    for(var i = 0; i < tracks.length; i++){
-        tracks[i].muted = true;
-    }
 }
-
-for(var iterator = 0; iterator < people.length; iterator++){
-
-    people[iterator].addEventListener('mousedown', function(e){
-        personClicked = this.id;
-        numberIWant = personClicked.match(numberPattern);
-        trackId = "sound-" + numberIWant;
-        songTrack = document.getElementById(trackId);
-        songTrack.muted = !songTrack.muted;
-        this.classList.toggle('person--animated');
-    });
-}
-
-startButton.addEventListener('click', function(){
-    splashScreen.style.display = "none";
-    people[0].classList.toggle('person--animated');
-    tracks[0].muted = !tracks[0].muted;
-})
-
-
-
-
-var endOfTrack = function(){
-    for(var iterator2 = 0; iterator2 < tracks.length; iterator2++){
-        tracks[iterator2].currentTime = 0;
-    }
-    masterTrack.play();
+if (Modernizr.audio.mp3)
+{
+    document.getElementById('fallback-splash').style.display = 'none';
 }

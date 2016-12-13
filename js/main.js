@@ -290,7 +290,7 @@ var sounds = [
     {id:"sound4", src:audioPath+"xmas2015_06-chris.mp3"}, // chris
     {id:"sound5", src:audioPath+"woof.mp3"}, // rufus
     {id:"sound6", src:audioPath+"xmas2015_05-dave.mp3"}, //dave
-    {id:"sound7", src:audioPath+"ian.mp3"}, //ian, // me
+    {id:"sound7", src:audioPath+"ian.mp3"}, //ian
     {id:"sound22", src:audioPath+"xmas2015_11-matty_hi.mp3"}, // matty
     {id:"sound23", src:audioPath+"xmas2015_12-dan.mp3"}, // dan
     {id:"sound8", src:audioPath+"xmas2015_08-jonny_low.mp3"}, // jonny
@@ -305,7 +305,7 @@ var sounds = [
     {id:"sound18", src:audioPath+"tree.mp3"}, //tree
     {id:"sound19", src:audioPath+"xmas2015_09-rachelsas.mp3"}, // rachel
     {id:"sound20", src:audioPath+"merryxmas.mp3"}, // gabrielle
-    {id:"sound21", src:audioPath+"sas.mp3"}
+    {id:"sound21", src:audioPath+"sas.mp3"} //sas
 ];
 var soundInstances = [];
 
@@ -360,6 +360,7 @@ function playCard(e) {
     e.preventDefault();
     soundInstances[0].muted = false;
     $('#splashScreen').hide();
+    $('#snow').remove();
     $('.person:eq(0)').toggleClass('person--animated');
 }
 
@@ -399,3 +400,78 @@ if (Modernizr.audio.mp3)
 {
     document.getElementById('fallback-splash').style.display = 'none';
 }
+
+var canvas = document.getElementById('splash_snow'),
+    ctx = canvas.getContext('2d'),
+    width = ctx.canvas.width = document.body.offsetWidth,
+    height = ctx.canvas.height = document.body.offsetHeight,
+    animFrame = window.requestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.msRequestAnimationFrame,
+    snowflakes = [];
+
+window.onresize = function() {
+  width = ctx.canvas.width = document.body.offsetWidth,
+    height = ctx.canvas.height = document.body.offsetHeight;
+}
+
+function update() {
+  for (var i = 0; i < snowflakes.length; i++) {
+    snowflakes[i].update();
+  }
+}
+
+function Snow() {
+  this.x = random(0, width);
+  this.y = random(-height, 0);
+  this.radius = random(0.5, 3.0);
+  this.speed = random(1, 3);
+  this.wind = random(-0.5, 3.0);
+}
+
+Snow.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+  ctx.fillStyle = '#fff';
+  ctx.fill();
+  ctx.closePath();
+}
+
+Snow.prototype.update = function() {
+  this.y += this.speed;
+  this.x += this.wind;
+
+  if (this.y > ctx.canvas.height) {
+    this.y = 0;
+    this.x = random(0, width);
+  }
+}
+
+function createSnow(count) {
+  for (var i = 0; i < count; i++) {
+    snowflakes[i] = new Snow();
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  for (var i = 0; i < snowflakes.length; i++) {
+    snowflakes[i].draw();
+  }
+}
+
+function loop() {
+  draw();
+  update();
+  animFrame(loop);
+}
+
+function random(min, max) {
+  var rand = (min + Math.random() * (max - min)).toFixed(1);
+  rand = Math.round(rand);
+  return rand;
+}
+
+createSnow(150);
+loop();

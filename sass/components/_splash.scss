@@ -46,6 +46,8 @@
     background-image: url('../../images/start-button.png');
 }
 
+
+
 #fallback-splash {
     background: $c-splash none repeat scroll 0% 0%;
     width: 100%;
@@ -54,4 +56,11 @@
     top: 0px;
     left: 0px;
     z-index: 2147483647;
+}
+
+#splash_snow {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
